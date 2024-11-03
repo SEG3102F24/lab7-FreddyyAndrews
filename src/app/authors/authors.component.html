@@ -1,0 +1,16 @@
+<div>
+    <label for="authorId">Enter Author ID:</label>
+    <input type="text" id="authorId" #authorIdInput>
+    <button (click)="fetchAuthor(authorIdInput.value)">Fetch Author</button>
+</div>
+
+<div *ngIf="author">
+    <h2>Author Details</h2>
+    <p><strong>ID:</strong> {{ author.id }}</p>
+    <p><strong>First Name:</strong> {{ author.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ author.lastName }}</p>
+</div>
+
+<div *ngIf="notFound">
+    <h2>Author not found</h2>
+</div>
